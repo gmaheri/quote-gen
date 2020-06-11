@@ -1,5 +1,5 @@
 
-const getCatFact = () => {
+const getQuote = () => {
   fetch("https://api.quotable.io/random")
   .then((res) => {
     return res.json();
