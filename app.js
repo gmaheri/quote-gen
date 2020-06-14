@@ -1,12 +1,17 @@
+window.onload = () => {
+  getQuote();
+};
+
+const api = "https://api.quotable.io/random";
 
 const getQuote = () => {
-  fetch("https://api.quotable.io/random")
+  fetch(api)
   .then((res) => {
     return res.json();
   })
   .then(data => {
-    document.getElementById('newQuoteSection').innerHTML = data.content;
-    document.getElementById('author').innerHTML = data.author
+    document.getElementById('output').innerHTML = data.content;
+    document.getElementById('author').innerHTML = '- ' +  data.author
   })
   .catch(err => console.error(err))
 }
